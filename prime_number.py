@@ -31,7 +31,9 @@ def generatePrimes(limit):
     implementation, use the Sieve of Atkin implemented in generatePrimeOpt'''
 
     # First generate a list of integers from 2 to the limit
-    nums = range(2, limit) #TODO use linked list to increase efficiency
+    nums = range(2, limit) # LinkedList would be better, but in pythons case it
+                           # worth to implement, since list is in C and self
+                           # implemented LinkedList is in python.
     pnums = []
 
     while len(nums) > 0:
