@@ -53,15 +53,17 @@ def largestPrimeFactor(n):
     if n < 2:
         return 1
 
+    # if n is even, the largest prime factor is 2
+    if not n & 1:
+        return 2
+
     found = False
 
     while not found:
         found = True
-        if not n & 1:
-            return 2
-
+        
         for x in range(3, int(n**0.5)+1, 2):
-            if n % x == 0:
+            if n != x and n % x == 0:
                 n = n/x
                 found = False
                 break
