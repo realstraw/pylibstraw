@@ -26,7 +26,7 @@ def isPrime(n):
     return True
 
 def generatePrimes(limit):
-    ''' generate prime numbers up to the limit. 
+    ''' generate prime numbers up to the limit none inclusive. 
     This method implements Sieve of Eratosthenes, for a more efficient
     implementation, use the Sieve of Atkin implemented in generatePrimeOpt'''
 
