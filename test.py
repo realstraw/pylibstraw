@@ -52,5 +52,11 @@ def findMax(mat):
 
 
 if __name__ == '__main__':        
-    mat = getMatrix('mat.txt')
-    print findMax(mat)
+    n = 0
+    i = 1
+    while True:
+        n = n + i
+        if getNumDivisors(n) > 500:
+            print n
+            break
+        i = i + 1

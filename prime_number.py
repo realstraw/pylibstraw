@@ -71,3 +71,48 @@ def largestPrimeFactor(n):
                 break
 
     return n
+
+def getDivisors(n):
+    divisors = []
+
+    n = abs(int(n)) # make sure n is a positive integer
+
+    for i in range(1, int(n**0.5)+1):
+        if n % i == 0:
+            divisors.append(i)
+            d = n/i
+            if d != i:
+                divisors.append(d)
+
+    return divisors
+
+def getNumDivisors(n):
+    """
+    A quicker solution for giving the number of divisors without compute the
+    actual divisors.
+
+    This algorithm is based on the following property,
+    Any integer N can be expressed as follows:
+    N = p1**a1 * p2**a2 * p3**a3 * ...
+    where 'pn' is a distinc prime number, and 'an' is its exponent.
+    E.g. 28 = 2**2 * 7**1
+
+    Furthermore, the number of divisors D(N) of any integer N can be computed
+    from: D(N) = (a1 + 1)*(a2 + 1)*(a3 + 1)*...
+    'an' being the exponents of the distinct prime numbers which are factors of
+    N. E.g. D(28) = (2+1)*(1+1) = 6
+    """
+
+    n = abs(int(n))
+
+    r = 1
+    i = 2
+    while i <= n:
+        a = 0
+        while n % i == 0:
+            n = n / i
+            a = a + 1
+        r = r * (a + 1)
+        i = i + 1
+
+    return r
