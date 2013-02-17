@@ -27,6 +27,16 @@ def getMatrix(fileName):
             mat.append(line.split())
     return mat
 
+def getNums(fileName):
+    nums = []
+    with io.open(fileName, 'r') as f:
+        while True:
+            line = f.readline()
+            if(len(line) == 0):
+                break
+            nums.append(line)
+    return nums
+            
 def findMax(mat):
     mx = 0
     
@@ -52,11 +62,8 @@ def findMax(mat):
 
 
 if __name__ == '__main__':        
-    n = 0
-    i = 1
-    while True:
-        n = n + i
-        if getNumDivisors(n) > 500:
-            print n
-            break
-        i = i + 1
+    nums = getNums('nums.txt')
+    length = 50
+    s = 0
+    for i in range(50):
+        while 
