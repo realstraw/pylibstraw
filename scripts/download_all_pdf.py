@@ -4,6 +4,7 @@ from pdf_files import get_all_pdfs
 
 if __name__ == "__main__":
     html_file = sys.argv[1]
+    target_location = sys.argv[2]
 
     pdf_links = get_all_pdfs(html_file)
-    get_internet_files(pdf_links)
+    get_internet_files(pdf_links, target_location)
